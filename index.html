@@ -41,6 +41,7 @@
                 <a href="forums.html" class="hover:text-emerald-200">Forums</a>
                 <a href="resources.html" class="hover:text-emerald-200">Resources</a>
                 <a href="events.html" class="hover:text-emerald-200">Events</a>
+                <a href="upload.html" class="hover:text-emerald-200">Upload</a>
                 <a href="developer.html" class="hover:text-emerald-200">Developer</a>
             </div>
             <div class="flex gap-4 items-center">
@@ -89,22 +90,16 @@
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
                 <span class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
-                What's Happening Now?
+                Latest Papers & Resources
             </h2>
-            <div class="space-y-4">
+            <div id="papersContainer" class="space-y-4">
+                <!-- Papers will be loaded here dynamically -->
                 <div class="bg-white p-4 rounded-xl flex justify-between items-center shadow-sm">
-                    <div>
-                        <span class="text-xs font-bold text-emerald-600 uppercase">Trending Discussion</span>
-                        <p class="font-semibold text-slate-800">"How to prepare for MSCE Biology practicals"</p>
+                    <div class="animate-pulse">
+                        <div class="h-4 bg-slate-200 rounded w-32 mb-2"></div>
+                        <div class="h-3 bg-slate-200 rounded w-48"></div>
                     </div>
-                    <i class="fas fa-chevron-right text-slate-300"></i>
-                </div>
-                <div class="bg-white p-4 rounded-xl flex justify-between items-center shadow-sm">
-                    <div>
-                        <span class="text-xs font-bold text-blue-600 uppercase">New Resource</span>
-                        <p class="font-semibold text-slate-800">2023 JCE Mathematics Mock Paper - Rumphi District</p>
-                    </div>
-                    <i class="fas fa-chevron-right text-slate-300"></i>
+                    <i class="fas fa-spinner fa-spin text-slate-300"></i>
                 </div>
             </div>
         </div>
@@ -198,6 +193,30 @@
     }
 </script>
 
+<section id="upload-section" class="max-w-3xl mx-auto my-12 p-6 bg-white rounded-3xl shadow-lg dark:bg-slate-800 dark:text-slate-100">
+        <h2 class="text-2xl font-bold mb-3">Submit a Past Paper</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-5">Help other students by uploading papers you have!</p>
+
+        <form action="https://app.forminit.com/f/YOUR_FORMINIT_ID" method="POST" enctype="multipart/form-data" class="upload-form space-y-4">
+            <div class="input-group">
+                <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-200">Your Full Name:</label>
+                <input type="text" name="name" id="name" required placeholder="e.g., John Phiri" class="w-full mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+            </div>
+
+            <div class="input-group">
+                <label for="subject" class="block text-sm font-medium text-slate-700 dark:text-slate-200">Paper Subject & Year:</label>
+                <input type="text" name="subject" id="subject" required placeholder="e.g., MSCE Biology 2022" class="w-full mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+            </div>
+
+            <div class="input-group">
+                <label for="file" class="block text-sm font-medium text-slate-700 dark:text-slate-200">Select Paper (PDF or Word):</label>
+                <input type="file" name="file" id="file" accept=".pdf,.docx,.doc" required class="w-full mt-1 p-3 border rounded-lg" />
+            </div>
+
+            <button type="submit" class="btn bg-emerald-600 text-white font-semibold w-full py-3 rounded-lg hover:bg-emerald-700 transition">Upload Paper to Library</button>
+        </form>
+    </section>
+
     <footer class="py-10 text-center text-slate-400 text-xs">
         <p>&copy; 2026 MSCE Digital Library</p>
         <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
@@ -235,6 +254,61 @@
         function meetDevelopers() {
             window.location.href = 'developer.html';
         }
+
+        // Fetch and display papers from papers.json
+        async function loadPapers() {
+            try {
+                const response = await fetch('papers.json');
+                const papers = await response.json();
+                
+                const container = document.getElementById('papersContainer');
+                
+                // Clear loading state
+                container.innerHTML = '';
+                
+                // Display latest 3 papers
+                const latestPapers = papers.slice(-3).reverse();
+                
+                latestPapers.forEach(paper => {
+                    const paperElement = document.createElement('div');
+                    paperElement.className = 'bg-white p-4 rounded-xl flex justify-between items-center shadow-sm hover:shadow-md transition-shadow cursor-pointer';
+                    paperElement.onclick = () => window.location.href = 'resources.html';
+                    
+                    paperElement.innerHTML = `
+                        <div>
+                            <span class="text-xs font-bold text-${paper.level === 'MSCE' ? 'emerald' : 'blue'}-600 dark:text-${paper.level === 'MSCE' ? 'emerald' : 'blue'}-400 uppercase">${paper.level} ${paper.subject}</span>
+                            <p class="font-semibold text-slate-800 dark:text-slate-100">${paper.title}</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">${paper.year}</p>
+                        </div>
+                        <i class="fas fa-download text-slate-300 dark:text-slate-600 hover:text-${paper.level === 'MSCE' ? 'emerald' : 'blue'}-500 dark:hover:text-${paper.level === 'MSCE' ? 'emerald' : 'blue'}-400 transition-colors"></i>
+                    `;
+                    
+                    container.appendChild(paperElement);
+                });
+                
+                // Add "View All Resources" button
+                const viewAllElement = document.createElement('div');
+                viewAllElement.className = 'text-center mt-6';
+                viewAllElement.innerHTML = `
+                    <a href="resources.html" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full font-semibold transition-colors">
+                        View All Resources <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                `;
+                container.appendChild(viewAllElement);
+                
+            } catch (error) {
+                console.error('Error loading papers:', error);
+                const container = document.getElementById('papersContainer');
+                container.innerHTML = `
+                    <div class="bg-white dark:bg-slate-800 p-4 rounded-xl text-center shadow-sm">
+                        <p class="text-slate-600 dark:text-slate-300">Unable to load latest papers. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load papers when page loads
+        document.addEventListener('DOMContentLoaded', loadPapers);
     </script>
 
 </body>

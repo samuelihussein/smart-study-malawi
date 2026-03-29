@@ -1,0 +1,874 @@
+[
+  {
+    "id": 1,
+    "title": "JCE Physics 2024",
+    "subject": "Physics",
+    "level": "JCE",
+    "year": 2024,
+    "file": "JCE EXAMS.docx"
+  },
+  {
+    "id": 2,
+    "title": "MSCE Biology 2021",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2021,
+    "file": "MSCEbio2021(I).pdf"
+  },
+  {
+    "id": 3,
+    "title": "JCE Biology Mock 2025",
+    "subject": "Biology",
+    "level": "JCE",
+    "year": 2025,
+    "file": "2025 BIOLOGY MJ JCE MOCK QUESTION PAPER.docx"
+  },
+  {
+    "id": 4,
+    "title": "MSCE Chemistry 2021",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2021,
+    "file": "MSCEche2021(I).pdf"
+  },
+  {
+    "id": 5,
+    "title": "MSCE Mathematics Paper II 2000",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2000,
+    "file": "2000MSCE_MATH_PAPERⅡ.pdf"
+  },
+  {
+    "id": 6,
+    "title": "MSCE Mathematics Paper I 2001",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2001,
+    "file": "2001MSCE_MATH_PAPERⅠ-1.pdf"
+  },
+  {
+    "id": 7,
+    "title": "MSCE Mathematics Paper I 2002",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2002,
+    "file": "2002MSCE_MATH_PAPERⅠ.pdf"
+  },
+  {
+    "id": 8,
+    "title": "MSCE Mathematics Paper II 2003",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2003,
+    "file": "2003MSCE_MATH_PAPERⅡ.pdf"
+  },
+  {
+    "id": 9,
+    "title": "MSCE Agriculture Paper II 2003",
+    "subject": "Agriculture",
+    "level": "MSCE",
+    "year": 2003,
+    "file": "2003_AGRICULTURE_PAPER_II.pdf"
+  },
+  {
+    "id": 10,
+    "title": "MSCE Mathematics Paper I 2004",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2004,
+    "file": "2004MSCE_MATH_PAPERⅠ.pdf"
+  },
+  {
+    "id": 11,
+    "title": "MSCE Mathematics Paper II 2004",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2004,
+    "file": "2004MSCE_MATH_PAPERⅡ.pdf"
+  },
+  {
+    "id": 12,
+    "title": "MSCE Biology Paper II 2005",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2005,
+    "file": "2005MSCE_BIO_PAPERⅡ_(1).pdf"
+  },
+  {
+    "id": 13,
+    "title": "MSCE Mathematics Paper II 2005",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2005,
+    "file": "2005MSCE_MATH_PAPERⅡ(0).pdf"
+  },
+  {
+    "id": 14,
+    "title": "MSCE Agriculture Paper II 2005",
+    "subject": "Agriculture",
+    "level": "MSCE",
+    "year": 2005,
+    "file": "2005_AGRICULTURE_PAPER_II.pdf"
+  },
+  {
+    "id": 15,
+    "title": "MSCE Mathematics Paper I 2006",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2006,
+    "file": "2006MSCE_MATH_PAPERⅠ_-_Copy.pdf"
+  },
+  {
+    "id": 16,
+    "title": "MSCE Mathematics Paper II 2006",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2006,
+    "file": "2006MSCE_MATH_PAPERⅡ.pdf"
+  },
+  {
+    "id": 17,
+    "title": "LBSS F4 Mock Mathematics Paper I 2008",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2008,
+    "file": "2008_LBSS_F4_MOCK_EXAMS_MATHS_I_-_Copy.docx"
+  },
+  {
+    "id": 18,
+    "title": "Mathematics Paper 2 2008",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2008,
+    "file": "2008_Maths_paper_2.pdf"
+  },
+  {
+    "id": 19,
+    "title": "MSCE Mathematics Paper II 2009",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2009,
+    "file": "2009MSCE_MATH_PAPERⅡ-1.pdf"
+  },
+  {
+    "id": 20,
+    "title": "MSCE Mathematics Paper I 2010",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2010,
+    "file": "2010MSCE_MATH_PAPERⅠ_(1).pdf"
+  },
+  {
+    "id": 21,
+    "title": "MSCE Mathematics Paper I 2011",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2011,
+    "file": "2011MSCE_MATH_PAPERⅠ.pdf"
+  },
+  {
+    "id": 22,
+    "title": "MSCE Mathematics Paper II 2011",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2011,
+    "file": "2011MSCE_MATH_PAPERⅡ_(2).pdf"
+  },
+  {
+    "id": 23,
+    "title": "Biology Paper 1 2012",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2012,
+    "file": "2012_Bio_P1.pdf"
+  },
+  {
+    "id": 24,
+    "title": "Mock Mathematics Form Four Paper 1 2013",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2013,
+    "file": "2013_mock_mathematics_form_four_paper_1-1-1.docx"
+  },
+  {
+    "id": 25,
+    "title": "MSCE Maths Mock Exams 2015",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2015,
+    "file": "2015_20MATHS_20MSCE_20MOCK_20EXAMS.pdf"
+  },
+  {
+    "id": 26,
+    "title": "Biology Paper 1 2015",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2015,
+    "file": "2015_Bio_P1 (1).pdf"
+  },
+  {
+    "id": 27,
+    "title": "Biology Paper 1 2015 (Alternative)",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2015,
+    "file": "2015_Bio_P1.pdf"
+  },
+  {
+    "id": 28,
+    "title": "Biology Paper 1 2016",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2016,
+    "file": "2016_Bio_P1 (1).pdf"
+  },
+  {
+    "id": 29,
+    "title": "Mathematics Mock Paper II 2017",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2017,
+    "file": "2017_MATHS_Mock_Paper_II_-_Copy.docx"
+  },
+  {
+    "id": 30,
+    "title": "Mathematics Mock Paper II 2017 (PDF)",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2017,
+    "file": "2017_MATHS_Mock_Paper_II_today_.pdf"
+  },
+  {
+    "id": 31,
+    "title": "Mock Paper 1 2017",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2017,
+    "file": "2017_Mock_paper_1.docx"
+  },
+  {
+    "id": 32,
+    "title": "Mock Paper 2 2017",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2017,
+    "file": "2017_Mock_paper_2.docx"
+  },
+  {
+    "id": 33,
+    "title": "BSS Maths Paper II 2018",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2018,
+    "file": "2018_BSS_Maths_P_II.pdf"
+  },
+  {
+    "id": 34,
+    "title": "Santa Physics 1 Mock 2018",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2018,
+    "file": "2018_SANTA_PHY_1_MOCK.pdf"
+  },
+  {
+    "id": 35,
+    "title": "Mathematics Mock PII Marking Scheme 2019",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "2019 MATHS MOCK PII MARKING SCHEME(1).pdf"
+  },
+  {
+    "id": 36,
+    "title": "St. Galen Maths 2019",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "2019St_galen_maths.pdf"
+  },
+  {
+    "id": 37,
+    "title": "Mathematics Paper 1 Maranatha 2019",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "2019_maths_1_MARANATHA.docx"
+  },
+  {
+    "id": 38,
+    "title": "Mathematics F4 PP II 2019",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "2019_maths_f4_PP_II.pdf"
+  },
+  {
+    "id": 39,
+    "title": "Mathematics Mock 2 2019",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "2019_MATHS_Mock_2.pdf"
+  },
+  {
+    "id": 40,
+    "title": "Mathematics Paper II 2019",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "2019_MATH_II.ed.pdf"
+  },
+  {
+    "id": 41,
+    "title": "Physics Mock Paper II 2019",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "2019_PHYSICS_MOCK_PII-1.pdf"
+  },
+  {
+    "id": 42,
+    "title": "Physics Paper I Form 3 2019",
+    "subject": "Physics",
+    "level": "JCE",
+    "year": 2019,
+    "file": "2019_PHYSICS_PAPER_I_FORM_3.pdf"
+  },
+  {
+    "id": 43,
+    "title": "Agriculture Mzuzu Zone 2020",
+    "subject": "Agriculture",
+    "level": "MSCE",
+    "year": 2020,
+    "file": "2020_agri_mzuzu_zone.pdf"
+  },
+  {
+    "id": 44,
+    "title": "NED Mock Mathematics I 2020",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2020,
+    "file": "2020_NED_MOCK_MATH_I.pdf"
+  },
+  {
+    "id": 45,
+    "title": "Mathematics Form 2 2021",
+    "subject": "Mathematics",
+    "level": "JCE",
+    "year": 2021,
+    "file": "2021 mathematics form 2.docx"
+  },
+  {
+    "id": 46,
+    "title": "Mathematics End of Term I St. Godfrey 2021",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2021,
+    "file": "2021_MAT_END_OF_TERM_I_@_ST._GODFREY.pdf"
+  },
+  {
+    "id": 47,
+    "title": "Mock Mathematics Paper II 2021",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2021,
+    "file": "2021_MOCK_MATHS_PII.pdf"
+  },
+  {
+    "id": 48,
+    "title": "MSCE Biology 2022",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2022,
+    "file": "2022 MSCE BIOLOGY.pdf"
+  },
+  {
+    "id": 49,
+    "title": "MSCE Chemistry 2022",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2022,
+    "file": "2022 MSCE CHEMISTRY.pdf"
+  },
+  {
+    "id": 50,
+    "title": "Chemistry Paper I Theory MJ Cluster 2022",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2022,
+    "file": "2022_Chemistry_Paper_I_(Theory)_MJ_CLUSTER.pdf"
+  },
+  {
+    "id": 51,
+    "title": "Nanjiri Cluster Mock Biology 2 2022",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2022,
+    "file": "2022_NANJIRI_CLASTER_MOCK_BIO2.pdf"
+  },
+  {
+    "id": 52,
+    "title": "Nkhoma Synod Physics II 2022",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2022,
+    "file": "2022_NKHOMA_SYNOD_PHYSICS_II.pdf"
+  },
+  {
+    "id": 53,
+    "title": "CEED Biology II 2023",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023 CEED BIOLOGY II.pdf"
+  },
+  {
+    "id": 54,
+    "title": "CEED Chemistry II 2023",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023 CEED chemistry ll.pdf"
+  },
+  {
+    "id": 55,
+    "title": "Chemistry Paper I 2023",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023 CHEMISTRY  PI.pdf"
+  },
+  {
+    "id": 56,
+    "title": "MSCE Mathematics Paper 2 2023",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023 MSCE MAT  PAPER2.pdf"
+  },
+  {
+    "id": 57,
+    "title": "MSCE Mock Biology II 2023",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023 MSCE MOCK BIO II.docx"
+  },
+  {
+    "id": 58,
+    "title": "MSCE Physics 1 Mock 2023",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023 MSCE PHYSICS 1 MOCK.docx"
+  },
+  {
+    "id": 59,
+    "title": "Physics Paper II 2023",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023 physics PPII.pdf"
+  },
+  {
+    "id": 60,
+    "title": "Additional Mathematics Assignment",
+    "subject": "Additional Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "ADDITIONA___MATHEMATICS___ASSIGNMENT-1-1.pdf (1).pdf"
+  },
+  {
+    "id": 61,
+    "title": "Chemistry Paper I Answers",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "ANSWER_CHEMISTRY_PI (1).pdf"
+  },
+  {
+    "id": 62,
+    "title": "Battle of Brains I",
+    "subject": "General",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "BATTLE_OF_BRAINS_I.pdf"
+  },
+  {
+    "id": 63,
+    "title": "Biology 2022-2023",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "biology 2022-2023.pdf"
+  },
+  {
+    "id": 64,
+    "title": "Biology Essays",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Biology Essays.pdf"
+  },
+  {
+    "id": 65,
+    "title": "Biology Paper II",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "biology II.pdf"
+  },
+  {
+    "id": 66,
+    "title": "Biology Paper II (Alternative)",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Biology_Paper_II.pdf"
+  },
+  {
+    "id": 67,
+    "title": "Biology Paper II Confidential Instructions",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "BIOLOGY_PAPER_II_confidential_instructions_1.docx"
+  },
+  {
+    "id": 68,
+    "title": "Biology Paper I Final",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "BIOLOGY_PI_-_Final_Copy.pdf"
+  },
+  {
+    "id": 69,
+    "title": "Biotechnology (EVA)",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "BIOTECHNOLOGY(EVA).pdf"
+  },
+  {
+    "id": 70,
+    "title": "Biology Practical Pass Code by J. Yambani",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "BIO_PRACTICAL_PASS_CODE_BY_J.YAMBANI - Copy.pdf"
+  },
+  {
+    "id": 71,
+    "title": "Respiratory System",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "BRespiratory_system(0)_(1).pdf"
+  },
+  {
+    "id": 72,
+    "title": "Chemistry F4 Paper 2",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "CHEM F4 PP2.docx"
+  },
+  {
+    "id": 73,
+    "title": "Chemistry JCE",
+    "subject": "Chemistry",
+    "level": "JCE",
+    "year": 2023,
+    "file": "CHEMISTRY JCE.pdf"
+  },
+  {
+    "id": 74,
+    "title": "Chemistry Paper II",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Chemistry PII.pdf"
+  },
+  {
+    "id": 75,
+    "title": "Chemistry Practice Questions",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "CHEMISTRY PRACTICE QUESTIONS.pdf"
+  },
+  {
+    "id": 76,
+    "title": "Chemistry NED Mock JCE",
+    "subject": "Chemistry",
+    "level": "JCE",
+    "year": 2023,
+    "file": "CHEMISTRY_NED_MOCK_JCE.docx"
+  },
+  {
+    "id": 77,
+    "title": "Chemistry Paper 2 PDF",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Chemistry_Paper_2_pdf.pdf"
+  },
+  {
+    "id": 78,
+    "title": "Chemistry Paper II (Alternative)",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Chemistry_Paper_II (1).pdf"
+  },
+  {
+    "id": 79,
+    "title": "Chemistry Paper II (Alternative 2)",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "CHEMISTRY_PII.pdf"
+  },
+  {
+    "id": 80,
+    "title": "Chemistry Practical",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "CHEMISTRY_PRACT.pdf"
+  },
+  {
+    "id": 81,
+    "title": "Chemistry Theory",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "chemistry_theory.pdf"
+  },
+  {
+    "id": 82,
+    "title": "Chemistry Book 4 Final",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Chemstry_Book_4_final-1.pdf"
+  },
+  {
+    "id": 83,
+    "title": "Excellence Mathematics",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "EXCELLENCE_MATHS.pdf"
+  },
+  {
+    "id": 84,
+    "title": "F4 Mock Mathematics Paper 1 2019",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2019,
+    "file": "F4_MOCK_MATHEMATICS_P1_2019_(1).pdf"
+  },
+  {
+    "id": 85,
+    "title": "Form Four Mathematics Paper II",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "form Four MATHS PAPER II.pdf"
+  },
+  {
+    "id": 86,
+    "title": "Form 3 Mathematics Final",
+    "subject": "Mathematics",
+    "level": "JCE",
+    "year": 2023,
+    "file": "FORM_3_MATHS_Final_and_Edited.docx"
+  },
+  {
+    "id": 87,
+    "title": "Form 4 Mathematics Paper 1 Final",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "FORM_4_MATHS_Paper_1_Final_and_Edited.docx"
+  },
+  {
+    "id": 88,
+    "title": "Form 4 Mathematics Paper 2 Final",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "FORM_4_MATHS_Paper_2_Final_and_Edited.docx"
+  },
+  {
+    "id": 89,
+    "title": "Form Four Mathematics Paper 1",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "form_four_Maths_paper_1.docx"
+  },
+  {
+    "id": 90,
+    "title": "Maranatha 2022 Biology 3rd Mock Paper 2",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2022,
+    "file": "maranatha 2022 BIO 3RD MOCK PP2.pdf"
+  },
+  {
+    "id": 91,
+    "title": "Maranatha Mathematics F2 MGA and MBO",
+    "subject": "Mathematics",
+    "level": "JCE",
+    "year": 2023,
+    "file": "MARANATHA_MATHS_F2-1_MGA_AND_MBO__-_Copy_-_Copy.pdf"
+  },
+  {
+    "id": 92,
+    "title": "Mathematics 2022-2023",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "MATHEMATICS 2022-2023 .pdf"
+  },
+  {
+    "id": 93,
+    "title": "Mathematics Paper 1 HAC",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "MATHEMATICS PAPER 1 HAC (1).pdf"
+  },
+  {
+    "id": 94,
+    "title": "Mathematics Paper 2",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "MATHEMATICS PAPER 2.pdf"
+  },
+  {
+    "id": 95,
+    "title": "Mathematics Paper II",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "MATHEMATICS_PAPER_II-1.docx"
+  },
+  {
+    "id": 96,
+    "title": "Mathematics Paper I Questions",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Mathematics_Paper_I_Q-1.pdf"
+  },
+  {
+    "id": 97,
+    "title": "Mathematics Paper I Final",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Mathematics_PI_-_Final_Copy.pdf"
+  },
+  {
+    "id": 98,
+    "title": "Mathematics Paper I Questions",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "MAT_PI_QUESTION.pdf"
+  },
+  {
+    "id": 99,
+    "title": "MSCE Mock Biology I",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "MSCE MOCK BIO I.docx"
+  },
+  {
+    "id": 100,
+    "title": "Physics Paper II 2021",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2021,
+    "file": "Physics  -2021 paper II-1.pdf"
+  },
+  {
+    "id": 101,
+    "title": "Physics Paper 1",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "PHYSICS 1.docx"
+  },
+  {
+    "id": 102,
+    "title": "Physics Paper 1 (Alternative)",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "PHYSICS PAPER 1 .pdf"
+  },
+  {
+    "id": 103,
+    "title": "Physics Paper I",
+    "subject": "Physics",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Physics PI.pdf"
+  },
+  {
+    "id": 104,
+    "title": "Pigments",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "pigments.pdf"
+  },
+  {
+    "id": 105,
+    "title": "Chemistry Practical Samples",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "20 CHEMISTRY PRACTICAL SAMPLES-2.pdf"
+  },
+  {
+    "id": 106,
+    "title": "Chemistry Mock II Bangwe",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "1651598405543_CHEMISTRY_MOCKII-_BANGWE.pdf"
+  },
+  {
+    "id": 107,
+    "title": "Excretion",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "09_Excretion(1).pdf"
+  },
+  {
+    "id": 108,
+    "title": "Chemistry Paper 1",
+    "subject": "Chemistry",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "Chemistry_pp1.docx"
+  },
+  {
+    "id": 109,
+    "title": "Biology Paper I Mock by J. Yambani",
+    "subject": "Biology",
+    "level": "MSCE",
+    "year": 2023,
+    "file": "2023  BIO PI MOCK  1 BY J.YAMBANI 3-6 shift.pdf"
+  }
+]
