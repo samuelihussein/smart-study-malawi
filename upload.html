@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Paper - Northern Scholars Connect</title>
@@ -9,34 +10,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
-    </style>
-    <style>
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #0f172a; /* Dark Slate */
-            color: #f1f5f9;
-        }
-        .dark-mode .bg-white {
-            background-color: #1e293b !important; /* Lighter Dark Slate */
-            color: #f1f5f9 !important;
-        }
-        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
-            color: #f1f5f9 !important;
-        }
-        .dark-mode .border {
-            border-color: #334155 !important;
-        }
-        .dark-mode .bg-slate-50 {
-            background-color: #0f172a !important;
-        }
-        .dark-mode input, .dark-mode select {
-            background-color: #1e293b !important;
-            color: #f1f5f9 !important;
-            border-color: #334155 !important;
-        }
-        .dark-mode input::placeholder {
-            color: #94a3b8 !important;
-        }
+        body.dark-mode { background-color: #0f172a; color: #f1f5f9; }
+        .dark-mode .bg-white { background-color: #1e293b !important; color: #f1f5f9 !important; }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 { color: #f1f5f9 !important; }
+        .dark-mode .border { border-color: #334155 !important; }
+        .dark-mode input, .dark-mode select { background-color: #1e293b !important; color: #f1f5f9 !important; border-color: #334155 !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -44,16 +22,8 @@
     <nav class="bg-emerald-700 text-white p-4 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-tight">NSC <span class="font-light text-emerald-200">Connect</span></h1>
-            <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="index.html" class="hover:text-emerald-200">Home</a>
-                <a href="forums.html" class="hover:text-emerald-200">Forums</a>
-                <a href="resources.html" class="hover:text-emerald-200">Resources</a>
-                <a href="events.html" class="hover:text-emerald-200">Events</a>
-                <a href="upload.html" class="hover:text-emerald-200">Upload</a>
-                <a href="developer.html" class="hover:text-emerald-200">Developer</a>
-            </div>
             <div class="flex gap-4 items-center">
-                <a href="login.html" class="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold">Login</a>
+                <a href="index.html" class="text-sm font-medium hover:text-emerald-200">Back to Home</a>
                 <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -64,158 +34,114 @@
     <main class="container mx-auto py-12 px-6 max-w-2xl">
         <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-100">
             <div class="text-center mb-8">
-                <div class="text-emerald-600 text-4xl mb-4">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                </div>
+                <div class="text-emerald-600 text-4xl mb-4"><i class="fas fa-cloud-upload-alt"></i></div>
                 <h1 class="text-3xl font-bold text-slate-800 mb-2">📤 Contribute a Paper</h1>
-                <p class="text-slate-600">Upload MSCE/JCE mock papers to help fellow students.</p>
+                <p class="text-slate-600 text-sm">Fill in the details below to add to our digital library.</p>
             </div>
 
-            <form id="paperForm" action="https://app.forminit.com/f/7uthe26sbos" method="POST" enctype="multipart/form-data" class="space-y-6">
-
+            <form id="paperForm" class="space-y-5">
                 <div>
-                    <label for="contributor_name" class="block text-sm font-semibold text-slate-700 mb-2">
-                        Student/Teacher Name <span class="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="text"
-                        id="contributor_name"
-                        name="contributor_name"
-                        required
-                        placeholder="Your name"
-                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                    >
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Student/Teacher Name</label>
+                    <input type="text" id="contributor_name" required placeholder="Your name" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
                 </div>
 
                 <div>
-                    <label for="subject" class="block text-sm font-semibold text-slate-700 mb-2">
-                        Subject (e.g., Biology) <span class="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        required
-                        placeholder="e.g. Physics"
-                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                    >
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
+                    <input type="text" id="subject" required placeholder="e.g. Mathematics" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
                 </div>
 
-                <div>
-                    <label for="level" class="block text-sm font-semibold text-slate-700 mb-2">
-                        Level <span class="text-red-500">*</span>
-                    </label>
-                    <select
-                        id="level"
-                        name="level"
-                        required
-                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                    >
-                        <option value="MSCE">MSCE</option>
-                        <option value="JCE">JCE</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="file_upload" class="block text-sm font-semibold text-slate-700 mb-2">
-                        Select File (PDF or Word) <span class="text-red-500">*</span>
-                    </label>
-                    <div class="relative">
-                        <input
-                            type="file"
-                            id="file_upload"
-                            name="file_upload"
-                            accept=".pdf,.doc,.docx"
-                            required
-                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-l-lg file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
-                        >
-                    </div>
-                    <p class="text-xs text-slate-500 mt-1">Accepted formats: PDF, DOCX, DOC. Maximum file size: 10MB</p>
-                </div>
-
-                <div class="pt-4">
-                    <button
-                        type="submit"
-                        id="submit-btn"
-                        class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-colors focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-                    >
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        Upload Paper
-                    </button>
-                </div>
-            </form>
-
-            <div class="mt-8 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
-                <div class="flex items-start gap-3">
-                    <div class="text-emerald-600 mt-1">
-                        <i class="fas fa-info-circle"></i>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Level</label>
+                        <select id="level" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="MSCE">MSCE</option>
+                            <option value="JCE">JCE</option>
+                        </select>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-emerald-800 mb-1">Important Notes</h3>
-                        <ul class="text-sm text-emerald-700 space-y-1">
-                            <li>• Ensure the paper is clear and readable</li>
-                            <li>• Include the correct subject, level (MSCE/JCE), and year</li>
-                            <li>• Only upload papers you have permission to share</li>
-                            <li>• Your submission will be reviewed before being added to the library</li>
-                        </ul>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Year</label>
+                        <input type="number" id="year" placeholder="2025" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
                     </div>
                 </div>
-            </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Select File (PDF/Word)</label>
+                    <input type="file" id="file_upload" accept=".pdf,.doc,.docx" required class="w-full px-4 py-3 border border-slate-300 rounded-lg file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700">
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg transition-all shadow-lg transform active:scale-95">
+                    <i class="fas fa-paper-plane mr-2"></i> Submit Paper
+                </button>
+            </form>
         </div>
     </main>
 
-    <footer class="py-10 text-center text-slate-400 text-xs">
-        <p>&copy; 2026 MSCE Digital Library</p>
-        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
-    </footer>
-
     <script>
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            const body = document.body;
-            const toggleBtn = document.getElementById('dark-mode-toggle');
-            const icon = toggleBtn.querySelector('i');
+        // --- 1. CONFIGURATION (REPLACE WITH YOUR KEYS) ---
+        const SB_URL = 'https://famvbzvtfjlnzvucltaw.supabase.co';
+        const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh4dmdxdmhkbGxmcHpubXVxb3F1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3ODUyMDYsImV4cCI6MjA5MDM2MTIwNn0.zyUwTCtPz7lN-T1brjk9v9T7iCJDE1h58pXu1Afm9lQ';
+        const _supabase = supabase.createClient(SB_URL, SB_KEY);
 
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                icon.className = 'fas fa-sun';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                icon.className = 'fas fa-moon';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        }
-
-        // Load dark mode preference
-        document.addEventListener('DOMContentLoaded', function() {
-            const darkMode = localStorage.getItem('darkMode');
-            const toggleBtn = document.getElementById('dark-mode-toggle');
-            const icon = toggleBtn.querySelector('i');
-
-            if (darkMode === 'enabled') {
-                document.body.classList.add('dark-mode');
-                icon.className = 'fas fa-sun';
-            } else {
-                icon.className = 'fas fa-moon';
-            }
-        });
-
-        // Meet Developers function
-        function meetDevelopers() {
-            window.location.href = 'developer.html';
-        }
-
-        // Form submission handling
+        // --- 2. UPLOAD LOGIC ---
         const form = document.getElementById('paperForm');
         const btn = document.getElementById('submit-btn');
 
-        form.onsubmit = function() {
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Processing Upload...';
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Uploading...';
             btn.disabled = true;
-            // The form will now submit to Forminit
-        };
-    </script>
 
+            const file = document.getElementById('file_upload').files[0];
+            const name = document.getElementById('contributor_name').value;
+            const subject = document.getElementById('subject').value;
+            const level = document.getElementById('level').value;
+            const year = document.getElementById('year').value || 'Unknown';
+
+            try {
+                // A. Upload to Storage (Bucket name must be 'past-papers')
+                const fileName = `${Date.now()}_${file.name}`;
+                const { data: uploadData, error: uploadError } = await _supabase.storage
+                    .from('past-papers')
+                    .upload(fileName, file);
+
+                if (uploadError) throw uploadError;
+
+                // B. Get Link
+                const { data: urlData } = _supabase.storage.from('past-papers').getPublicUrl(fileName);
+
+                // C. Save to Table (Table name must be 'papers')
+                const { error: dbError } = await _supabase.from('papers').insert([{ 
+                    contributor_name: name, 
+                    subject: subject, 
+                    level: level, 
+                    year: year,
+                    file_url: urlData.publicUrl 
+                }]);
+
+                if (dbError) throw dbError;
+
+                alert("Zikomo! Paper uploaded successfully.");
+                window.location.href = 'index.html';
+
+            } catch (err) {
+                alert('Upload failed: ' + err.message);
+                btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Submit Paper';
+                btn.disabled = false;
+            }
+        });
+
+        // Dark Mode Logic
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('dark-mode-toggle').innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        }
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('dark-mode-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    </script>
 </body>
 </html>

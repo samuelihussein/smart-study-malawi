@@ -2,14 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Success - Malawi Past Papers</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-    <div style="text-align: center; padding: 50px;">
-        <h1>Zikomo! (Thank You)</h1>
-        <p>Your paper has been sent successfully. Our team will review it and add it to the library soon.</p>
-        <br>
-        <a href="index.html" class="btn">Return to Home</a>
-    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Northern Scholars Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-emerald-700 text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight">NSC <span class="font-light text-emerald-200">Connect</span></h1>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-emerald-200">Home</a>
+                <a href="forums.html" class="hover:text-emerald-200">Forums</a>
+                <a href="resources.html" class="hover:text-emerald-200">Resources</a>
+                <a href="events.html" class="hover:text-emerald-200">Events</a>
+                <a href="upload.html" class="hover:text-emerald-200">Upload</a>
+                <a href="developer.html" class="hover:text-emerald-200">Developer</a>
+            </div>
+            <div class="flex gap-4 items-center">
+                <a href="login.html" class="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold">Login</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-16 px-6 max-w-2xl">
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-100 text-center">
+            <div class="text-emerald-600 text-6xl mb-6">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-slate-800 mb-4">Zikomo! (Thank You)</h1>
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                Your paper has been submitted successfully! Our team will review it and add it to the library within 24-48 hours.
+            </p>
+
+            <div class="bg-emerald-50 rounded-lg p-6 mb-8 border border-emerald-200">
+                <div class="flex items-center justify-center gap-3 mb-3">
+                    <div class="text-emerald-600">
+                        <i class="fas fa-info-circle text-xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-emerald-800">What happens next?</h3>
+                </div>
+                <ul class="text-sm text-emerald-700 space-y-2 text-left max-w-md mx-auto">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-emerald-600 mt-0.5"></i>
+                        <span>Our team reviews your submission for quality and accuracy</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-emerald-600 mt-0.5"></i>
+                        <span>Paper gets added to the digital library with proper metadata</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-emerald-600 mt-0.5"></i>
+                        <span>You'll help thousands of Malawian students prepare for exams</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-colors focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+                    <i class="fas fa-home mr-2"></i>
+                    Return to Home
+                </a>
+                <a href="resources.html" class="inline-flex items-center justify-center bg-slate-600 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-lg transition-colors focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
+                    <i class="fas fa-book mr-2"></i>
+                    Browse Resources
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('dark-mode-toggle');
+            const icon = toggleBtn.querySelector('i');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        // Load dark mode preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkMode = localStorage.getItem('darkMode');
+            const toggleBtn = document.getElementById('dark-mode-toggle');
+            const icon = toggleBtn.querySelector('i');
+
+            if (darkMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        });
+
+        // Meet Developers function
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "sample-1",
+    "title": "Mathematics Paper I (2024)",
+    "subject": "Mathematics",
+    "level": "MSCE",
+    "type": "Paper",
+    "year": "2024",
+    "contributor": "Sample Contributor",
+    "fileUrl": "sample-math-2024.pdf",
+    "fileType": "pdf",
+    "uploadDate": "2024-01-15",
+    "tags": ["MSCE", "Mathematics", "Paper I"]
+  }
+]
