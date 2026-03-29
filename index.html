@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northern Scholars Connect | Malawi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-emerald-700 text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight">NSC <span class="font-light text-emerald-200">Connect</span></h1>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#" class="hover:text-emerald-200">Home</a>
+                <a href="forums.html" class="hover:text-emerald-200">Forums</a>
+                <a href="resources.html" class="hover:text-emerald-200">Resources</a>
+                <a href="events.html" class="hover:text-emerald-200">Events</a>
+                <a href="developer.html" class="hover:text-emerald-200">Developer</a>
+            </div>
+            <div class="flex gap-4 items-center">
+                <a href="login.html" class="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold">Login</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-emerald-600 text-white py-16 px-6 text-center">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 italic">Connect. Learn. Inspire.</h2>
+            <p class="text-lg text-emerald-100 mb-8 leading-relaxed">
+                The premier digital hub for students across the North — from the hills of Chitipa to the shores of Nkhata Bay.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="register.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold shadow-lg transition">Join the Community</a>
+                <a href="forums.html" class="bg-emerald-800 hover:bg-emerald-900 text-white px-8 py-3 rounded-full font-bold transition">Explore Forums</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mx-auto py-12 px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                <div class="text-emerald-600 text-3xl mb-4"><i class="fas fa-comments"></i></div>
+                <h3 class="font-bold text-lg mb-2">Share Ideas</h3>
+                <p class="text-slate-600 text-sm">Discuss MSCE tips, agriculture, and Tumbuka culture with peers.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                <div class="text-emerald-600 text-3xl mb-4"><i class="fas fa-book-open"></i></div>
+                <h3 class="font-bold text-lg mb-2">Access Resources</h3>
+                <p class="text-slate-600 text-sm">Download past MANEB papers and local study guides easily.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                <div class="text-emerald-600 text-3xl mb-4"><i class="fas fa-calendar-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Discover Events</h3>
+                <p class="text-slate-600 text-sm">Stay updated on Mzuzu workshops and inter-school sports.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-100 py-12 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                What's Happening Now?
+            </h2>
+            <div class="space-y-4">
+                <div class="bg-white p-4 rounded-xl flex justify-between items-center shadow-sm">
+                    <div>
+                        <span class="text-xs font-bold text-emerald-600 uppercase">Trending Discussion</span>
+                        <p class="font-semibold text-slate-800">"How to prepare for MSCE Biology practicals"</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-slate-300"></i>
+                </div>
+                <div class="bg-white p-4 rounded-xl flex justify-between items-center shadow-sm">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase">New Resource</span>
+                        <p class="font-semibold text-slate-800">2023 JCE Mathematics Mock Paper - Rumphi District</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-slate-300"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-white font-bold mb-4 text-xl">Northern Scholars Connect</h2>
+            <p class="text-sm mb-6 max-w-md mx-auto italic text-slate-500">
+                "Kuyendera Pamodzi Akuluta" — Built with pride for the students of Northern Malawi.
+            </p>
+            <div class="flex justify-center space-x-6 mb-8 text-sm">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">Contact Us</a>
+            </div>
+            <p class="text-xs">&copy; 2026 Northern Scholars Connect. All rights reserved.</p>
+        </div>
+    </footer>
+    <div id="welcomeModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 transition-opacity duration-500">
+    <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden transform transition-all scale-100">
+        
+        <div class="bg-emerald-600 p-8 text-center text-white relative">
+            <div class="absolute top-4 right-4">
+                <button onclick="closeModal()" class="text-emerald-200 hover:text-white transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="bg-white text-emerald-600 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h2 class="text-2xl font-black italic">Mwalandiridwa!</h2>
+            <p class="text-emerald-100 text-sm mt-1 uppercase tracking-widest font-bold">Welcome to NSC Connect</p>
+        </div>
+
+        <div class="p-8">
+            <p class="text-slate-600 text-center mb-8 leading-relaxed">
+                The North's biggest digital library and student forum is now in your hands. Here is how to start:
+            </p>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="text-emerald-600 mt-1"><i class="fas fa-file-arrow-down text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">Download Papers</h4>
+                        <p class="text-xs text-slate-400">Visit the <strong>Library</strong> to get MSCE & JCE past papers for free.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="text-orange-500 mt-1"><i class="fas fa-comments text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">Join Discussions</h4>
+                        <p class="text-xs text-slate-400">Ask questions in the <strong>Forums</strong> and get answers from top students.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="text-blue-500 mt-1"><i class="fas fa-trophy text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">Earn Points</h4>
+                        <p class="text-xs text-slate-400">Help others and climb the <strong>Leaderboard</strong> to represent your school.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="closeModal()" class="w-full mt-10 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-emerald-200 transition-all transform active:scale-95">
+                Get Started
+            </button>
+            
+            <p class="text-center text-[10px] text-slate-300 mt-4 uppercase font-bold tracking-tighter">
+                Proudly serving Mzuzu, Mzimba, Karonga, Rumphi, Chitipa, Nkhata Bay & Likoma
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        const modal = document.getElementById('welcomeModal');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        // Optional: Save to local storage so it doesn't show every single time
+        localStorage.setItem('hasVisitedNSC', 'true');
+    }
+
+    // Check if user has seen it before
+    window.onload = function() {
+        if (localStorage.getItem('hasVisitedNSC')) {
+            document.getElementById('welcomeModal').classList.add('hidden');
+        }
+    }
+</script>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

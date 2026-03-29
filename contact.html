@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact NSC | Get in Touch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-emerald-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold">NSC <span class="font-light text-emerald-200">Support</span></a>
+            <div class="space-x-4 text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="forums.html" class="hover:underline">Forums</a>
+                <a href="developer.html" class="hover:underline">Developer</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-12 px-6 max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-12 bg-white rounded-3xl shadow-xl overflow-hidden">
+            
+            <div class="bg-emerald-600 p-10 text-white">
+                <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                <p class="text-emerald-100 mb-8 leading-relaxed">
+                    Have a question about the Northern Scholars Connect platform? Or do you want to partner with us to help students in your district? Send us a message!
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-emerald-500 p-3 rounded-full text-xl w-12 h-12 flex items-center justify-center">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-emerald-200 uppercase font-bold tracking-widest">Email Us</p>
+                            <p class="font-medium">support@nsconnect.mw</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="bg-emerald-500 p-3 rounded-full text-xl w-12 h-12 flex items-center justify-center">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-emerald-200 uppercase font-bold tracking-widest">Headquarters</p>
+                            <p class="font-medium">Mzuzu City, Northern Region</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-emerald-500">
+                    <p class="text-sm italic">"Kuyendera Pamodzi Akuluta"</p>
+                </div>
+            </div>
+
+            <div class="p-10">
+                <form action="#" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Your Name</label>
+                        <input type="text" placeholder="e.g. Hope Gondwe" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-emerald-500 focus:ring-1 focus:ring-emerald-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Email or Phone Number</label>
+                        <input type="text" placeholder="How can we reach you?" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-emerald-500 focus:ring-1 focus:ring-emerald-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Reason for Message</label>
+                        <select class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-emerald-500 focus:ring-1 focus:ring-emerald-500 transition">
+                            <option>General Question</option>
+                            <option>Technical Issue / Bug</option>
+                            <option>Suggest a Resource</option>
+                            <option>Partner with Us</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2 ml-1">Your Message</label>
+                        <textarea rows="4" placeholder="Tell us more..." class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-emerald-500 focus:ring-1 focus:ring-emerald-500 transition"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

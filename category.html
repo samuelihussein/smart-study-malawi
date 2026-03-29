@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSC | Community Categories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-emerald-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="forums.html" class="flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i>
+                <span class="font-bold">Back to All Forums</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="developer.html" class="text-emerald-200 text-xs hover:underline">Developer</a>
+                <span class="text-emerald-200 text-xs font-bold uppercase tracking-widest">Northern Scholars Connect</span>
+            </div>
+            <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="bg-white border-b py-8 px-6">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-black text-slate-800">MSCE / JCE Prep</h1>
+            <p class="text-slate-500 mt-2">Study groups, past paper discussions, and exam tips for Northern students.</p>
+        </div>
+    </div>
+
+    <main class="container mx-auto py-8 px-6 max-w-5xl">
+        
+        <div class="mb-12">
+            <h2 class="text-emerald-600 font-bold mb-4 flex items-center gap-2">
+                <i class="fas fa-graduation-cap"></i> Academic Discussions
+            </h2>
+            <div class="space-y-3">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center hover:shadow-md transition cursor-pointer">
+                    <div>
+                        <h4 class="font-bold text-slate-800">Predictions for 2026 MSCE English Literature?</h4>
+                        <p class="text-xs text-slate-400 mt-1">Started by: <span class="text-emerald-600">Gift K. (Marymount)</span> • 24 replies</p>
+                    </div>
+                    <span class="text-slate-300"><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-orange-600 font-bold mb-4 flex items-center gap-2">
+                <i class="fas fa-seedling"></i> Agriculture & Climate
+            </h2>
+            <div class="space-y-3">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center hover:shadow-md transition">
+                    <div>
+                        <h4 class="font-bold text-slate-800">Irrigation methods for small farms in Mzimba</h4>
+                        <p class="text-xs text-slate-400 mt-1">Started by: <span class="text-orange-600">Agric-Student_01</span> • 12 replies</p>
+                    </div>
+                    <span class="text-slate-300"><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-blue-600 font-bold mb-4 flex items-center gap-2">
+                <i class="fas fa-university"></i> Campus Life (Mzuni/Poly)
+            </h2>
+            <div class="space-y-3">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center hover:shadow-md transition">
+                    <div>
+                        <h4 class="font-bold text-slate-800">Finding affordable boarding near Mzuzu University</h4>
+                        <p class="text-xs text-slate-400 mt-1">Started by: <span class="text-blue-600">Freshman_26</span> • 45 replies</p>
+                    </div>
+                    <span class="text-slate-300"><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-purple-600 font-bold mb-4 flex items-center gap-2">
+                <i class="fas fa-heart"></i> Northern Culture (Tumbuka)
+            </h2>
+            <div class="space-y-3">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center hover:shadow-md transition">
+                    <div>
+                        <h4 class="font-bold text-slate-800">Vimbuza traditions and history: A student's perspective</h4>
+                        <p class="text-xs text-slate-400 mt-1">Started by: <span class="text-purple-600">CulturePreserve_MW</span> • 7 replies</p>
+                    </div>
+                    <span class="text-slate-300"><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <button class="fixed bottom-8 right-8 bg-orange-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

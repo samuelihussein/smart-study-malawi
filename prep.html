@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSCE Prep | Northern Scholars Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-emerald-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold">NSC <span class="font-light text-emerald-200">Prep</span></a>
+            <div class="space-x-4 text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="forums.html" class="hover:underline">Back to Forums</a>
+                <a href="developer.html" class="hover:underline">Developer</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-8 px-6 max-w-5xl">
+        <section class="mt-12 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+    <div class="bg-slate-50 p-4 border-b border-slate-200 flex justify-between items-center">
+        <h3 class="font-bold text-slate-700">Post a Reply</h3>
+        <span class="text-xs text-slate-400">Posting as: <span class="text-emerald-600 font-bold">Guest User</span></span>
+    </div>
+    
+    <div class="p-6">
+        <form action="#">
+            <div class="flex gap-4 mb-2 text-slate-400 text-sm border-b pb-2 border-slate-100">
+                <button type="button" class="hover:text-emerald-600"><i class="fas fa-bold"></i></button>
+                <button type="button" class="hover:text-emerald-600"><i class="fas fa-italic"></i></button>
+                <button type="button" class="hover:text-emerald-600"><i class="fas fa-link"></i></button>
+                <button type="button" class="hover:text-emerald-600"><i class="fas fa-image"></i></button>
+            </div>
+            
+            <textarea 
+                rows="4" 
+                class="w-full p-4 text-sm bg-slate-50 border-none focus:ring-0 placeholder-slate-300 resize-none outline-none" 
+                placeholder="Share your thoughts or answer the question..."></textarea>
+            
+            <div class="mt-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-slate-400 italic">Please follow our community guidelines. Be respectful to fellow scholars.</p>
+                <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center gap-2">
+                    <i class="fas fa-paper-plane text-xs"></i> Post Reply
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+        <div class="bg-emerald-600 rounded-2xl p-6 text-white mb-8 shadow-lg">
+            <h2 class="text-2xl font-bold">Countdown to MANEB 2026</h2>
+            <p class="opacity-90">Stay focused, Scholars! Share your study timetables and difficult topics here.</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-white p-5 rounded-xl border-l-4 border-emerald-500 shadow-sm flex justify-between items-center">
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase">Mathematics</span>
+                    <h4 class="font-bold text-slate-800 text-lg">Circle Geometry: How to handle 'Theorems of Tangents'?</h4>
+                    <p class="text-sm text-slate-500">52 students are discussing this • 3 hours ago</p>
+                </div>
+                <button class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg font-bold text-sm">Join Chat</button>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border-l-4 border-emerald-500 shadow-sm flex justify-between items-center">
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase">English</span>
+                    <h4 class="font-bold text-slate-800 text-lg">Summary Writing: Tips for the 2026 Paper</h4>
+                    <p class="text-sm text-slate-500">18 replies • Started by Teacher Gomez (Phwezi)</p>
+                </div>
+                <button class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg font-bold text-sm">Join Chat</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

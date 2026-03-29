@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSC | Study Resources & Sharing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <nav class="bg-emerald-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-bold text-xl tracking-tight">NSC <span class="font-light text-emerald-100">Library</span></a>
+            <div class="flex gap-4 items-center">
+                <a href="developer.html" class="text-sm hover:text-emerald-200">Developer</a>
+                <a href="index.html" class="text-sm bg-emerald-800 px-3 py-1 rounded hover:bg-emerald-900 transition">Back Home</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-10 px-6 max-w-4xl">
+        <h2 class="text-3xl font-bold mb-2 text-slate-800 text-center md:text-left">Academic Resources</h2>
+        <p class="text-slate-500 mb-8 text-center md:text-left">Find and share MANEB papers with your classmates.</p>
+
+        <div class="relative mb-6">
+            <i class="fas fa-search absolute left-4 top-3.5 text-slate-400"></i>
+            <input type="text" id="resourceSearch" onkeyup="filterResources()" placeholder="Search (e.g. Biology, Math)..." 
+                class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        </div>
+
+        <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+            <button onclick="setActiveFilter('all')" id="btn-all" class="filter-btn bg-emerald-600 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md transition">All</button>
+            <button onclick="setActiveFilter('msce')" id="btn-msce" class="filter-btn bg-white border text-slate-600 px-5 py-2 rounded-full text-sm font-bold hover:bg-emerald-50 transition">MSCE</button>
+            <button onclick="setActiveFilter('jce')" id="btn-jce" class="filter-btn bg-white border text-slate-600 px-5 py-2 rounded-full text-sm font-bold hover:bg-emerald-50 transition">JCE</button>
+            <button onclick="setActiveFilter('primary')" id="btn-primary" class="filter-btn bg-white border text-slate-600 px-5 py-2 rounded-full text-sm font-bold hover:bg-emerald-50 transition">Primary</button>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+    <table class="w-full text-left border-collapse">
+        <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+                <th class="p-4 text-xs font-black text-slate-400 uppercase tracking-widest">Subject & Year</th>
+                <th class="p-4 text-xs font-black text-slate-400 uppercase tracking-widest hidden md:table-cell">Level</th>
+                <th class="p-4 text-xs font-black text-slate-400 uppercase tracking-widest text-right">Action</th>
+            </tr>
+        </thead>
+        <tbody id="bulkResourceList">
+            
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-pdf text-red-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Mathematics Paper II (2000)</p>
+                <p class="text-[10px] text-slate-400 md:hidden">MSCE • MANEB</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded">MSCE</span></td>
+    <td class="p-4 text-right"><a href="2000MSCE_MATH_PAPERⅡ.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-pdf text-red-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Mathematics Paper I (2001)</p>
+                <p class="text-[10px] text-slate-400 md:hidden">MSCE • MANEB</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded">MSCE</span></td>
+    <td class="p-4 text-right"><a href="2001MSCE_MATH_PAPERⅠ-1.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-pdf text-red-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Mathematics Paper I (2002)</p>
+                <p class="text-[10px] text-slate-400 md:hidden">MSCE • MANEB</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded">MSCE</span></td>
+    <td class="p-4 text-right"><a href="2002MSCE_MATH_PAPERⅠ.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-pdf text-purple-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Chemistry Practical: 20 Model Samples</p>
+                <p class="text-[10px] text-slate-400 md:hidden">MSCE • Study Guide</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-1 rounded">MSCE Practical</span></td>
+    <td class="p-4 text-right"><a href="20 CHEMISTRY PRACTICAL SAMPLES-2.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-pdf text-green-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Agriculture Paper II (2003) - Practical</p>
+                <p class="text-[10px] text-slate-400 md:hidden">MSCE • MANEB</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded">MSCE</span></td>
+    <td class="p-4 text-right"><a href="2003_AGRICULTURE_PAPER_II.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card jce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-pdf text-blue-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Biology: Excretion Topical Questions</p>
+                <p class="text-[10px] text-slate-400 md:hidden">JCE/MSCE • Revision</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-1 rounded">Revision</span></td>
+    <td class="p-4 text-right"><a href="09_Excretion(1).pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card jce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-word text-blue-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Biology Mock (2025) - Mulanje</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded">JCE Mock</span></td>
+    <td class="p-4 text-right"><a href="2025 BIOLOGY MJ  JCE MOCK QUESTION PAPER.docx" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card jce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-word text-blue-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Biology Mock (2023) - Blantyre Cluster</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded">JCE Mock</span></td>
+    <td class="p-4 text-right"><a href="EDITED final JCE BIOLOGY 2023.docx" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card jce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-word text-blue-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Physics JCE Exam (2024)</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded">JCE</span></td>
+    <td class="p-4 text-right"><a href="JCE EXAMS.docx" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card jce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-word text-blue-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Biology Mock (2021) - Nkhamenya Cluster</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded">JCE Mock</span></td>
+    <td class="p-4 text-right"><a href="2021_JCE_CLUSTER_MOCK_BIOLOGY.docx" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-flask text-purple-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Chemistry Form 4 Full Study Guide</p>
+                <p class="text-[10px] text-slate-400 md:hidden">MSCE • Textbook</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-1 rounded">Textbook</span></td>
+    <td class="p-4 text-right"><a href="Chemstry_Book_4_final-1.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-vial text-purple-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Chemistry Practical Mock 2022 (Hill Crescent)</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-purple-50 text-purple-600 text-[10px] font-bold px-2 py-1 rounded">Practical</span></td>
+    <td class="p-4 text-right"><a href="Chemistry_Paper_II (1).pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-file-word text-blue-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Chemistry Paper I Mock 2022 (Walemera)</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded">MSCE Theory</span></td>
+    <td class="p-4 text-right"><a href="Chemistry_pp1.docx" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-calculator text-red-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Math Paper II Mock (Marist Secondary)</p>
+                <p class="text-[10px] text-slate-400 md:hidden">MSCE • High Quality</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded">MSCE</span></td>
+    <td class="p-4 text-right"><a href="form Four MATHS PAPER II.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-square-root-alt text-red-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Math Paper I Mock (James Chiona Catholic)</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-red-50 text-red-600 text-[10px] font-bold px-2 py-1 rounded">MSCE</span></td>
+    <td class="p-4 text-right"><a href="F4_MOCK_MATHEMATICS_P1_2019_(1).pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-laptop-code text-blue-500"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Excellence Online Math Mock 2020</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-1 rounded">Online Mock</span></td>
+    <td class="p-4 text-right"><a href="EXCELLENCE_MATHS.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+<tr class="resource-card msce border-b border-slate-50 hover:bg-emerald-50/30 transition">
+    <td class="p-4">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-flask text-emerald-600"></i>
+            <div>
+                <p class="font-bold text-slate-800 resource-title">Complete Chemistry Practical Guide</p>
+            </div>
+        </div>
+    </td>
+    <td class="p-4 hidden md:table-cell"><span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded">Revision</span></td>
+    <td class="p-4 text-right"><a href="CHEMISTRY_PRACT.pdf" class="text-emerald-600 font-bold text-sm"><i class="fas fa-download"></i></a></td>
+</tr>
+
+            </tbody>
+    </table>
+</div>
+
+        <div id="noResults" class="hidden text-center py-10 text-slate-400 italic">No matches found.</div>
+    </main>
+
+    <script>
+        let currentFilter = 'all';
+
+        function setActiveFilter(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            document.getElementById('btn-' + category).classList.add('bg-emerald-600', 'text-white');
+            document.getElementById('btn-' + category).classList.remove('bg-white', 'text-slate-600');
+            filterResources();
+        }
+
+        function filterResources() {
+            const searchText = document.getElementById('resourceSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.resource-card');
+            let foundCount = 0;
+
+            cards.forEach(card => {
+                const title = card.querySelector('.resource-title').innerText.toLowerCase();
+                const matchesSearch = title.includes(searchText);
+                const matchesFilter = (currentFilter === 'all' || card.classList.contains(currentFilter));
+
+                if (matchesSearch && matchesFilter) {
+                    card.classList.remove('hidden');
+                    foundCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            document.getElementById('noResults').classList.toggle('hidden', foundCount > 0);
+        }
+    </script>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

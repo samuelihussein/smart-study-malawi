@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join NSC | Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-emerald-600 min-h-screen flex items-center justify-center p-6">
+
+    <button onclick="toggleDarkMode()" class="fixed top-4 right-4 text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl p-8">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Create Account</h2>
+            <p class="text-slate-500 text-sm">Join the student network of the North</p>
+        </div>
+
+        <form class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1 ml-1">Full Name</label>
+                <input type="text" placeholder="e.g. Kondwani Phiri" class="w-full p-3 bg-slate-50 border rounded-xl focus:outline-emerald-500">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1 ml-1">District</label>
+                    <select class="w-full p-3 bg-slate-50 border rounded-xl text-sm focus:outline-emerald-500">
+                        <option>Mzuzu</option>
+                        <option>Mzimba</option>
+                        <option>Nkhata Bay</option>
+                        <option>Rumphi</option>
+                        <option>Karonga</option>
+                        <option>Chitipa</option>
+                        <option>Likoma</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1 ml-1">Level</label>
+                    <select class="w-full p-3 bg-slate-50 border rounded-xl text-sm focus:outline-emerald-500">
+                        <option>Secondary</option>
+                        <option>University</option>
+                        <option>Teacher</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1 ml-1">Email or Phone</label>
+                <input type="text" class="w-full p-3 bg-slate-50 border rounded-xl focus:outline-emerald-500">
+            </div>
+
+            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg transition duration-300">
+                Create My Account
+            </button>
+        </form>
+
+        <p class="text-center mt-6 text-sm text-slate-500">
+            Already have an account? <a href="#" class="text-emerald-600 font-bold">Login</a>
+        </p>
+    </div>
+    <div class="max-w-4xl mx-auto py-12 px-6">
+    <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="bg-emerald-800 p-6 text-white text-center">
+            <h2 class="text-2xl font-bold">NSC Community Guidelines</h2>
+            <p class="text-emerald-200 text-xs uppercase tracking-widest mt-1">Protecting our Northern Scholars</p>
+        </div>
+        
+        <div class="p-8 space-y-8">
+            <div class="flex gap-4">
+                <div class="bg-emerald-100 text-emerald-700 w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                <div>
+                    <h4 class="font-bold text-slate-800">Academic Focus Only</h4>
+                    <p class="text-sm text-slate-500">This platform is for MSCE/JCE prep, career guidance, and regional culture. Please avoid posting political or unrelated advertisements.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="bg-emerald-100 text-emerald-700 w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                <div>
+                    <h4 class="font-bold text-slate-800">Respect Each Other</h4>
+                    <p class="text-sm text-slate-500">No bullying or tribalism. Whether you are from Chitipa or Nkhata Bay, we are all Northern Scholars. Be kind to those asking "simple" questions.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="bg-emerald-100 text-emerald-700 w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                <div>
+                    <h4 class="font-bold text-slate-800">No Exam Malpractice</h4>
+                    <p class="text-sm text-slate-500">Do not share or ask for "leakages." We believe in hard work. Any accounts sharing fake or leaked MANEB papers will be banned permanently.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="bg-emerald-100 text-emerald-700 w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+                <div>
+                    <h4 class="font-bold text-slate-800">Protect Your Privacy</h4>
+                    <p class="text-sm text-slate-500">Do not post your private phone number or home address in the public forums. Use the registration system to connect safely.</p>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t text-center">
+                <p class="text-xs text-slate-400 italic">"Kuyendera Pamodzi Akuluta" — By walking together, we go far.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

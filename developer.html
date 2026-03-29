@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Hussein - MSCE Digital Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body.dark-mode {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        body.dark-mode .dev-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+        .dev-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .dev-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 min-h-screen text-slate-900 transition-colors duration-300">
+
+    <nav class="bg-slate-900 text-white p-4 shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold tracking-tight text-blue-400">MSCE Digital Library</a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="hidden md:block hover:text-blue-400 transition">Home</a>
+                <a href="resources.html" class="hidden md:block hover:text-blue-400 transition">Resources</a>
+                <button id="dark-mode-toggle" class="p-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 transition" onclick="toggleDarkMode()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-16 px-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="dev-card bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-700 h-32"></div>
+                <div class="px-8 pb-8">
+                    <div class="relative -mt-16 mb-6 text-center">
+                        <img src="huss.jpg" alt="Hussein Samueli Aluba" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg">
+                        <h1 class="text-3xl font-extrabold mt-4">Hussein Samueli Aluba</h1>
+                        <p class="text-blue-600 dark:text-blue-400 font-medium text-lg">Aspiring Software Developer & AI Enthusiast</p>
+                        <p class="text-sm text-slate-500"><i class="fas fa-map-marker-alt mr-1"></i> Lilongwe, Malawi</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-3 border-b pb-2 border-slate-100 dark:border-slate-700">About Me</h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
+                            I am <strong>Hussein Samueli Aluba</strong>, a 17-year-old developer based in Lilongwe, currently a student at Mzuzu Government Secondary School. Driven by a mission to bridge the educational resource gap in Malawi, I built the <strong>MSCE Digital Library</strong> to provide students easy access to JCE and MSCE mock papers from across the country. With expertise in Web Development and UI/UX Design, I am dedicated to creating digital solutions that solve real-world problems. My ultimate goal is to transition into the international tech industry, building impactful tools that empower communities globally.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-10">
+                        <div>
+                            <h3 class="font-semibold mb-3 text-slate-800 dark:text-slate-100">Technical Toolkit</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-md text-sm font-medium">Web Development</span>
+                                <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md text-sm font-medium">AI Tools</span>
+                                <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium">UI/UX Design</span>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-md text-sm font-medium">App Architecture</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-3 text-slate-800 dark:text-slate-100">Live Projects</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://mzugoss.lovable.app/" class="text-blue-500 hover:underline text-sm flex items-center"><i class="fas fa-external-link-alt mr-2"></i> Mzugoss App</a></li>
+                                <li><a href="https://hussein-2026.base44.app/" class="text-blue-500 hover:underline text-sm flex items-center"><i class="fas fa-external-link-alt mr-2"></i> Hussein 2026 Personal App</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="mailto:hussein@example.com" class="flex items-center justify-center bg-slate-900 text-white px-8 py-3 rounded-xl hover:bg-slate-800 transition shadow-lg">
+                            <i class="fas fa-envelope mr-2"></i> Email Me
+                        </a>
+                        <a href="https://wa.me/265997488516" class="flex items-center justify-center bg-green-600 text-white px-8 py-3 rounded-xl hover:bg-green-500 transition shadow-lg">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 MSCE Digital Library | Designed by Hussein Samueli Aluba</p>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize theme on load
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) toggleBtn.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+    </script>
+
+</body>
+</html>

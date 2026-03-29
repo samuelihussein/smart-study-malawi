@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | NSC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <nav class="bg-emerald-700 text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-user-circle text-2xl text-emerald-300"></i>
+                <span class="font-bold">Kondwani's Portal</span>
+            </div>
+            <div class="flex gap-4 items-center">
+                <a href="developer.html" class="text-xs hover:text-emerald-200">Developer</a>
+                <a href="index.html" class="text-xs bg-emerald-800 px-3 py-1 rounded">Logout</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-8 px-6 max-w-5xl">
+        
+        <div class="mb-8">
+            <h1 class="text-2xl font-black text-slate-800">Muli bwanji, Kondwani!</h1>
+            <p class="text-slate-500">You have 3 tasks to complete today.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+                        KP
+                    </div>
+                    <h3 class="font-bold text-slate-800">Kondwani Phiri</h3>
+                    <p class="text-xs text-slate-400 font-bold uppercase">Mzimba Secondary School</p>
+                    
+                    <div class="mt-6 pt-6 border-t flex justify-around">
+                        <div>
+                            <p class="text-lg font-black text-emerald-600">450</p>
+                            <p class="text-[10px] text-slate-400 uppercase">Points</p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-black text-blue-600">12</p>
+                            <p class="text-[10px] text-slate-400 uppercase">Downloads</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-900 p-6 rounded-3xl text-white shadow-lg">
+                    <h4 class="font-bold mb-4 text-sm">Quick Actions</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="resources.html" class="flex items-center gap-2 opacity-80 hover:opacity-100"><i class="fas fa-search"></i> Find Papers</a></li>
+                        <li><a href="forums.html" class="flex items-center gap-2 opacity-80 hover:opacity-100"><i class="fas fa-plus-circle"></i> Ask a Question</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 space-y-6">
+                
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                    <div class="p-6 border-b flex justify-between items-center">
+                        <h3 class="font-bold text-slate-800"><i class="fas fa-tasks mr-2 text-orange-500"></i> My Study Tasks</h3>
+                        <button class="text-xs font-bold text-emerald-600">+ Add Task</button>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-xl">
+                            <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-emerald-600">
+                            <span class="text-sm text-slate-700 flex-grow">Finish Biology Circle Geometry notes</span>
+                            <span class="text-[10px] bg-orange-100 text-orange-700 px-2 py-1 rounded-md font-bold">Urgent</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-xl">
+                            <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-emerald-600">
+                            <span class="text-sm text-slate-700 flex-grow">Download 2024 English Mock Paper</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden mb-6">
+                    <div class="p-6 border-b flex justify-between items-center bg-emerald-50">
+                        <h3 class="font-bold text-emerald-800"><i class="fas fa-stopwatch mr-2"></i> Focus Timer</h3>
+                        <span id="timer-label" class="text-[10px] font-bold uppercase tracking-widest text-emerald-600">Study Session</span>
+                    </div>
+                    
+                    <div class="p-8 text-center">
+                        <div class="text-6xl font-black text-slate-800 mb-6 tracking-tighter" id="timer-display">
+                            25:00
+                        </div>
+
+                        <div class="flex justify-center gap-3">
+                            <button onclick="startTimer()" id="start-btn" class="bg-emerald-600 text-white px-6 py-2 rounded-xl font-bold text-sm hover:bg-emerald-700 transition shadow-md shadow-emerald-100">
+                                Start
+                            </button>
+                            <button onclick="pauseTimer()" class="bg-slate-100 text-slate-600 px-6 py-2 rounded-xl font-bold text-sm hover:bg-slate-200 transition">
+                                Pause
+                            </button>
+                            <button onclick="resetTimer()" class="bg-slate-100 text-red-500 px-4 py-2 rounded-xl font-bold text-sm hover:bg-red-50 transition">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="text-[10px] text-slate-400 mt-6 italic">25 mins study • 5 mins break</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                    <div class="p-6 border-b">
+                        <h3 class="font-bold text-slate-800"><i class="fas fa-folder-open mr-2 text-blue-500"></i> My Downloads</h3>
+                    </div>
+                    <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-3 border rounded-xl flex items-center gap-3">
+                            <i class="fas fa-file-pdf text-red-500"></i>
+                            <div class="overflow-hidden">
+                                <p class="text-xs font-bold truncate">Agric_Paper2_2023.pdf</p>
+                                <p class="text-[10px] text-slate-400">Downloaded 2 days ago</p>
+                            </div>
+                        </div>
+                        <div class="p-3 border rounded-xl flex items-center gap-3">
+                            <i class="fas fa-file-word text-blue-500"></i>
+                            <div class="overflow-hidden">
+                                <p class="text-xs font-bold truncate">English_Grammar_Tips.docx</p>
+                                <p class="text-[10px] text-slate-400">Downloaded yesterday</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        let timeLeft = 25 * 60;
+        let timerId = null;
+        const display = document.getElementById('timer-display');
+
+        function updateDisplay() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            display.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+        function startTimer() {
+            if (timerId) return; // Prevent double clicking
+            timerId = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerId);
+                    alert("Time is up! Take a 5-minute break.");
+                    resetTimer();
+                }
+            }, 1000);
+            document.getElementById('start-btn').classList.add('opacity-50', 'pointer-events-none');
+        }
+
+        function pauseTimer() {
+            clearInterval(timerId);
+            timerId = null;
+            document.getElementById('start-btn').classList.remove('opacity-50', 'pointer-events-none');
+        }
+
+        function resetTimer() {
+            pauseTimer();
+            timeLeft = 25 * 60;
+            updateDisplay();
+        }
+
+        // Initialize timer display in case it renders before any click
+        updateDisplay();
+    </script>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

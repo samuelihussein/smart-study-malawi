@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture & Climate | NSC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-orange-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold">NSC <span class="font-light text-orange-200">Agric</span></a>
+            <div class="space-x-4 text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="forums.html" class="hover:underline">Back to Forums</a>
+                <a href="developer.html" class="hover:underline">Developer</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-8 px-6 max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-4 mb-8 text-white">
+            <div class="bg-orange-600 p-6 rounded-2xl shadow-lg">
+                <h3 class="font-bold flex items-center gap-2"><i class="fas fa-cloud-sun-rain"></i> Weather Alert: North</h3>
+                <p class="text-sm mt-2 font-light">Expect heavy rains in Nkhata Bay and Karonga this week. Ensure your field drainage is clear!</p>
+            </div>
+            <div class="bg-stone-700 p-6 rounded-2xl shadow-lg">
+                <h3 class="font-bold flex items-center gap-2"><i class="fas fa-shopping-cart"></i> Market Prices</h3>
+                <p class="text-sm mt-2 font-light">Maize and Soya prices in Mzuzu Central Market have been updated for this morning.</p>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-white p-6 rounded-xl border border-orange-200 shadow-sm hover:shadow-md transition">
+                <h4 class="font-bold text-slate-800 text-lg">Best fertilizer for rice in Karonga?</h4>
+                <p class="text-sm text-slate-600 my-3 leading-relaxed">My family farm near the lake is struggling with yields this season. Are there organic boosters available in the North?</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex gap-4 text-xs font-bold text-orange-600">
+                        <span><i class="fas fa-comment"></i> 12 Replies</span>
+                        <span><i class="fas fa-leaf"></i> Soil Science</span>
+                    </div>
+                    <button class="text-orange-700 font-bold text-sm">Join Discussion</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+    </script>
+
+</body>
+</html>

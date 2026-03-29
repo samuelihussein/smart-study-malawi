@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSC | Regional Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a; /* Dark Slate */
+            color: #f1f5f9;
+        }
+        .dark-mode .bg-white {
+            background-color: #1e293b !important; /* Lighter Dark Slate */
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 {
+            color: #f1f5f9 !important;
+        }
+        .dark-mode .border {
+            border-color: #334155 !important;
+        }
+        .dark-mode .bg-slate-50 {
+            background-color: #0f172a !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-emerald-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold">NSC <span class="font-light text-emerald-200">Events</span></a>
+            <div class="space-x-4 text-sm">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="forums.html" class="hover:underline">Forums</a>
+                <a href="developer.html" class="hover:underline">Developer</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white border-b py-10 px-6 text-center">
+        <h2 class="text-3xl font-extrabold text-slate-800 mb-2">What's Happening in the North?</h2>
+        <p class="text-slate-500">From Chitipa to Nkhata Bay—don't miss out on these opportunities.</p>
+    </header>
+
+    <main class="container mx-auto py-8 px-6 max-w-4xl">
+        
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-6 flex flex-col md:flex-row">
+            <div class="bg-orange-500 text-white p-6 flex flex-col justify-center items-center md:w-32 text-center">
+                <span class="text-sm uppercase font-bold text-orange-200">Oct</span>
+                <span class="text-4xl font-black">25</span>
+            </div>
+            <div class="p-6 flex-grow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-emerald-700">Mzuzu Inter-Secondary Quiz Bowl</h3>
+                    <span class="text-[10px] bg-emerald-100 text-emerald-700 font-bold px-2 py-1 rounded-full uppercase">Competition</span>
+                </div>
+                <p class="text-slate-600 text-sm mb-4">Hosted at Katoto Secondary. Teams from 10 schools will compete for the Northern Trophy!</p>
+                <div class="flex items-center text-xs text-slate-400 gap-4">
+                    <span><i class="fas fa-map-marker-alt mr-1 text-orange-500"></i> Mzuzu City</span>
+                    <span><i class="far fa-clock mr-1"></i> 08:30 AM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-6 flex flex-col md:flex-row">
+            <div class="bg-emerald-600 text-white p-6 flex flex-col justify-center items-center md:w-32 text-center">
+                <span class="text-sm uppercase font-bold text-emerald-200">Nov</span>
+                <span class="text-4xl font-black">12</span>
+            </div>
+            <div class="p-6 flex-grow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-emerald-700">Mzuni University Career Talk</h3>
+                    <span class="text-[10px] bg-blue-100 text-blue-700 font-bold px-2 py-1 rounded-full uppercase">Education</span>
+                </div>
+                <p class="text-slate-600 text-sm mb-4">Thinking of applying to Mzuni? Join the virtual session on how to choose your degree path.</p>
+                <div class="flex items-center text-xs text-slate-400 gap-4">
+                    <span><i class="fas fa-video mr-1 text-orange-500"></i> Online (Zoom)</span>
+                    <span><i class="far fa-clock mr-1"></i> 02:00 PM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-12">
+            <button onclick="toggleSchoolsModal()" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg">
+                <i class="fas fa-school mr-2"></i>Northern Schools
+            </button>
+        </div>
+
+        <div class="bg-emerald-50 border-2 border-dashed border-emerald-200 rounded-2xl p-8 text-center mt-12">
+            <h4 class="font-bold text-emerald-800 mb-2">Organizing an event?</h4>
+            <p class="text-emerald-700 text-sm mb-4">Tell the whole Northern student community about it!</p>
+            <button class="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-700">Submit Your Event</button>
+        </div>
+
+    </main>
+
+    <!-- Schools Modal -->
+    <div id="schoolsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto dark-mode-card">
+            <div class="sticky top-0 bg-blue-600 text-white p-6 flex justify-between items-center">
+                <h3 class="text-2xl font-bold">Northern Region Schools</h3>
+                <button onclick="toggleSchoolsModal()" class="text-2xl hover:text-blue-200 transition">&times;</button>
+            </div>
+
+            <div class="p-6 space-y-8">
+                <!-- Public and Government Schools -->
+                <div>
+                    <h4 class="text-lg font-bold text-emerald-700 mb-4 border-b-2 border-emerald-200 pb-2">Public and Government Secondary Schools</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Chilumba Boys Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Chaminade Boys Secondary School (Karonga)</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Rumphi Boys Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Livingstonia Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Mzimba Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Euthini Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Robert Laws Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Mzuzu Government Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Chitipa Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Ekwendeni Girls Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Katoto Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>St. John Bosco Boys Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Nkhatabay Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Bandawe Boys Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-emerald-600 mr-3"></i>Likoma Secondary School</li>
+                    </ul>
+                </div>
+
+                <!-- Private and Catholic Schools -->
+                <div>
+                    <h4 class="text-lg font-bold text-blue-700 mb-4 border-b-2 border-blue-200 pb-2">Private and Catholic Secondary Schools</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-blue-600 mr-3"></i>Marymount Catholic Secondary School (Mzuzu)</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-blue-600 mr-3"></i>Chambo Girls Private Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-blue-600 mr-3"></i>St Patricia Private Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-blue-600 mr-3"></i>Masambiro Private Secondary School</li>
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-blue-600 mr-3"></i>Multicareer Private Secondary School</li>
+                    </ul>
+                </div>
+
+                <!-- Community Day Secondary Schools -->
+                <div>
+                    <h4 class="text-lg font-bold text-orange-700 mb-4 border-b-2 border-orange-200 pb-2">Community Day Secondary Schools (CDSS)</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-slate-700"><i class="fas fa-check-circle text-orange-600 mr-3"></i>Kwakupokera CDSS</li>
+                    </ul>
+                </div>
+
+                <!-- Close Button -->
+                <div class="flex justify-center pt-4 border-t">
+                    <button onclick="toggleSchoolsModal()" class="bg-slate-800 text-white px-6 py-2 rounded-full hover:bg-slate-700 transition-colors font-semibold">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        <p>&copy; 2026 MSCE Digital Library</p>
+        <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" onclick="meetDevelopers()">Meet the Developers</button>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.querySelector('#dark-mode-toggle i');
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+                // Use a check to make sure the toggle button exists on this specific page
+                const toggleBtn = document.querySelector('#dark-mode-toggle i');
+                if(toggleBtn) {
+                    toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+        }
+
+        function meetDevelopers() {
+            window.location.href = 'developer.html';
+        }
+
+        function toggleSchoolsModal() {
+            const modal = document.getElementById('schoolsModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('schoolsModal');
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    toggleSchoolsModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
