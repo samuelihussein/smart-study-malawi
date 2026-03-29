@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Northern Scholars Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        body.dark-mode { background-color: #0f172a; color: #f1f5f9; }
+        .dark-mode .bg-white { background-color: #1e293b !important; color: #f1f5f9 !important; }
+        .dark-mode .text-slate-800, .dark-mode .text-slate-700 { color: #f1f5f9 !important; }
+        .dark-mode .border { border-color: #334155 !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="bg-emerald-700 text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight">NSC <span class="font-light text-emerald-200">Connect</span></h1>
+            <div class="flex gap-4 items-center">
+                <a href="index.html" class="text-sm font-medium hover:text-emerald-200">Back to Home</a>
+                <a href="resources.html" class="text-sm font-medium hover:text-emerald-200">Resources</a>
+                <a href="upload.html" class="bg-white text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold">Upload New</a>
+                <button onclick="toggleDarkMode()" class="text-xl px-2 focus:outline-none" id="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-10 px-6">
+        <header class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-2">Study Notes</h2>
+            <p class="text-slate-600">Access shared study notes and materials from the community.</p>
+        </header>
+
+        <div class="flex flex-col md:flex-row gap-4 mb-8 max-w-4xl mx-auto">
+            <input type="text" id="searchBox" placeholder="Search notes..." class="flex-1 p-3 border rounded-lg outline-none focus:ring-2 focus:ring-emerald-500">
+            <button onclick="loadNotes()" class="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+        </div>
+
+        <div id="notesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="col-span-full text-center py-20">
+                <i class="fas fa-spinner fa-spin text-4xl text-emerald-600 mb-4"></i>
+                <p>Loading notes...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Configuration
+        const SB_URL = 'https://dtrtpnxctpqpltjkynma.supabase.co';
+        const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR0cnRwbnhjdHBxcGx0amt5bm1hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3ODg5MDIsImV4cCI6MjA5MDM2NDkwMn0.PH3cc-o2Iibyo6Kw7A0iG6ZEZuE7ICEO8MtRMXsR2-U';
+        const _supabase = supabase.createClient(SB_URL, SB_KEY);
+
+        let allNotes = []; // Store all notes globally
+
+        async function loadNotes() {
+            const grid = document.getElementById('notesGrid');
+            const search = document.getElementById('searchBox').value.toLowerCase();
+
+            try {
+                const { data: notes, error } = await _supabase
+                    .from('notes')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                allNotes = notes; // Store notes globally
+                grid.innerHTML = ''; // Clear loading state
+
+                if (notes.length === 0) {
+                    grid.innerHTML = '<div class="col-span-full text-center text-slate-500">No notes found yet.</div>';
+                    return;
+                }
+
+                notes.forEach(note => {
+                    // Search filter logic
+                    if (search && !JSON.stringify(note).toLowerCase().includes(search)) return;
+
+                    const card = `
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">${note.subject || 'General'}</span>
+                                <span class="text-slate-400 text-xs font-medium">${note.created_at ? new Date(note.created_at).toLocaleDateString() : 'N/A'}</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-1">${note.title || 'Untitled Note'}</h3>
+                            <p class="text-xs text-slate-500 mb-4 italic">Shared by ${note.contributor_name || 'Anonymous'}</p>
+                            <div class="text-sm text-slate-700 mb-4">
+                                ${note.content ? note.content.substring(0, 150) + (note.content.length > 150 ? '...' : '') : 'No content preview'}
+                            </div>
+                            <button onclick="viewNote(${note.id})" class="block w-full bg-slate-800 text-white text-center py-2 rounded-lg hover:bg-black transition-colors font-semibold">
+                                <i class="fas fa-eye mr-2"></i> View Full Note
+                            </button>
+                        </div>
+                    `;
+                    grid.innerHTML += card;
+                });
+
+            } catch (err) {
+                grid.innerHTML = `<div class="col-span-full text-center text-red-500">Error: ${err.message}</div>`;
+            }
+        }
+
+        function viewNote(id) {
+            const note = allNotes.find(n => n.id === id);
+            if (!note) {
+                alert('Note not found');
+                return;
+            }
+
+            // Populate modal
+            document.getElementById('modalTitle').textContent = note.title || 'Untitled Note';
+            document.getElementById('modalSubject').textContent = note.subject || 'General';
+            document.getElementById('modalContributor').textContent = note.contributor_name || 'Anonymous';
+            document.getElementById('modalDate').textContent = note.created_at ? new Date(note.created_at).toLocaleDateString() : 'N/A';
+            document.getElementById('modalContent').textContent = note.content || 'No content available';
+
+            // Show modal
+            document.getElementById('noteModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('noteModal').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('noteModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('noteModal').classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const toggle = document.getElementById('dark-mode-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                toggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                toggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+
+        // Load notes on page load
+        loadNotes();
+    </script>
+
+    <!-- Note Modal -->
+    <div id="noteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-100 dark:border-slate-600 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modalTitle" class="text-2xl font-bold text-slate-800 dark:text-slate-100">Note Title</h2>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-100 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-4 mb-6">
+                <div class="flex justify-between items-center">
+                    <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-sm font-bold px-3 py-1 rounded" id="modalSubject">Subject</span>
+                    <span class="text-slate-500 dark:text-slate-400 text-sm" id="modalDate">Date</span>
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 text-sm italic" id="modalContributor">Shared by Contributor</p>
+            </div>
+            
+            <div class="border-t border-slate-200 dark:border-slate-600 pt-4">
+                <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-3">Content</h3>
+                <div id="modalContent" class="text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">
+                    Note content will appear here...
+                </div>
+            </div>
+            
+            <div class="flex justify-end mt-6">
+                <button onclick="closeModal()" class="bg-slate-600 hover:bg-slate-700 dark:bg-slate-500 dark:hover:bg-slate-400 text-white px-6 py-2 rounded-lg transition-colors">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html></content>
+<parameter name="filePath">c:\Users\user1\Desktop\hussein maths\school\notes.html
