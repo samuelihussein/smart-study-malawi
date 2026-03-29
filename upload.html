@@ -98,12 +98,36 @@
             const level = document.getElementById('level').value;
             const year = document.getElementById('year').value || 'Unknown';
 
+            if (!file) {
+                alert('Please select a file to upload.');
+                btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Submit Paper';
+                btn.disabled = false;
+                return;
+            }
+
+            const acceptedTypes = [
+                'application/pdf',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            ];
+
+            if (!acceptedTypes.includes(file.type)) {
+                alert('Upload failed: mime type ' + file.type + ' is not supported. Please select PDF or Word document.');
+                btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Submit Paper';
+                btn.disabled = false;
+                return;
+            }
+
             try {
                 // A. Upload to Storage (Bucket name must be 'past-papers')
                 const fileName = `${Date.now()}_${file.name}`;
                 const { data: uploadData, error: uploadError } = await _supabase.storage
                     .from('past-papers')
-                    .upload(fileName, file);
+                    .upload(fileName, file, {
+                        cacheControl: '3600',
+                        upsert: false,
+                        contentType: file.type
+                    });
 
                 if (uploadError) throw uploadError;
 
